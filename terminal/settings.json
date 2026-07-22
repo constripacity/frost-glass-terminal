@@ -1,0 +1,158 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+
+  // ---------------------------------------------------------------------------
+  //  REFERENCE settings.json for the Frost Glass look.
+  //
+  //  Prefer `install.ps1` (it MERGES these values into your real settings.json
+  //  so your machine-specific profile GUIDs are preserved). Only drop this file
+  //  in wholesale if you have no customisations you care about — the GUIDs below
+  //  are the standard well-known ones and should match a fresh install.
+  // ---------------------------------------------------------------------------
+
+  "theme": "frostGlass",
+  "themes": [
+    {
+      "name": "frostGlass",
+      // Layered depth: the title strip is a distinct, more-opaque glass layer and
+      // the active tab is a raised, lighter blue-grey, while the terminal body stays
+      // see-through (profiles.defaults.opacity). Different materials = real depth.
+      "tab": {
+        "background": "#222C3CE6",
+        "unfocusedBackground": "#161C27CC",
+        "showCloseButton": "hover"
+      },
+      "tabRow": {
+        "background": "#080B11E6",
+        "unfocusedBackground": "#080B11B3"
+      },
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      }
+    }
+  ],
+
+  "useAcrylicInTabRow": true,
+  "showTabsInTitlebar": true,
+  "alwaysShowTabs": true,
+  "focusFollowMouse": false,
+  "copyOnSelect": false,
+  "copyFormatting": "none",
+  "trimBlockSelection": true,
+
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+
+  "profiles": {
+    // These defaults apply the glass look to EVERY profile at once.
+    "defaults": {
+      "useAcrylic": true,
+      "opacity": 50,
+      "colorScheme": "Frost Glass",
+
+      "font": {
+        "face": "CaskaydiaCove NF",
+        "size": 11,
+        "weight": "normal",
+        "features": { "calt": 1, "liga": 1 }
+      },
+
+      "cursorShape": "filledBox",
+      "antialiasingMode": "cleartype",
+      "padding": "10, 10, 10, 10",
+      "scrollbarState": "hidden",
+      "snapOnInput": true,
+      "useAtlasEngine": true,
+
+      "experimental.retroTerminalEffect": false,
+
+      "intenseTextStyle": "bright",
+      "adjustIndistinguishableColors": "indexed",
+
+      // The backlit-glass sheen ships bundled at ~/.frost-glass/sheen.png but is OFF
+      // in the default look. Toggle it live in customize.ps1, or add it here:
+      //   "backgroundImage": "%USERPROFILE%\\.frost-glass\\sheen.png",
+      //   "backgroundImageOpacity": 0.5,
+      //   "backgroundImageStretchMode": "fill",
+      //   "backgroundImageAlignment": "center",
+
+      "unfocusedAppearance": {
+        "opacity": 38
+      }
+    },
+
+    "list": [
+      {
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore",
+        "commandline": "pwsh.exe -NoLogo",
+        "icon": "\ue756",
+        "startingDirectory": "%USERPROFILE%"
+      },
+      {
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name": "Windows PowerShell",
+        "commandline": "powershell.exe -NoLogo",
+        "hidden": false
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "Command Prompt",
+        "commandline": "cmd.exe",
+        "icon": "\ue756",
+        "hidden": false
+      },
+      {
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "name": "Ubuntu (WSL)",
+        "source": "Windows.Terminal.Wsl",
+        "hidden": false
+      }
+    ]
+  },
+
+  "schemes": [
+    {
+      "name": "Frost Glass",
+      "background": "#0C0F16",
+      "foreground": "#E8EFF5",
+      "cursorColor": "#7CC4FF",
+      "selectionBackground": "#34465E",
+      "black":         "#1A1F29",
+      "red":           "#FF8FA6",
+      "green":         "#5FE39A",
+      "yellow":        "#FFD36B",
+      "blue":          "#66B4FF",
+      "purple":        "#B49BFF",
+      "cyan":          "#5FE6DF",
+      "white":         "#C9D4DE",
+      "brightBlack":   "#3A4351",
+      "brightRed":     "#FFA7BA",
+      "brightGreen":   "#7FF0B4",
+      "brightYellow":  "#FFE39A",
+      "brightBlue":    "#8CCBFF",
+      "brightPurple":  "#CBB9FF",
+      "brightCyan":    "#86F0EB",
+      "brightWhite":   "#F2F7FB"
+    }
+  ],
+
+  // Windows Terminal 1.22+ split "actions" (what to do, keyed by id) from
+  // "keybindings" (which keys trigger an id). Distinct ids keep the +/- opacity
+  // deltas from being merged into one action on WT's next save.
+  "actions": [
+    { "id": "Glass.opacityUp",   "command": { "action": "adjustOpacity", "delta": 5 } },
+    { "id": "Glass.opacityDown", "command": { "action": "adjustOpacity", "delta": -5 } },
+    { "id": "Glass.focusMode",   "command": "toggleFocusMode" },
+    { "id": "Glass.splitDup",    "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" } }
+  ],
+
+  "keybindings": [
+    { "id": "Glass.opacityUp",   "keys": "ctrl+shift+up" },
+    { "id": "Glass.opacityDown", "keys": "ctrl+shift+down" },
+    { "id": "Glass.focusMode",   "keys": "shift+f11" },
+    { "id": "Glass.splitDup",    "keys": "alt+shift+d" }
+  ]
+}

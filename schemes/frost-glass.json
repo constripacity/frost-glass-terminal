@@ -1,0 +1,27 @@
+{
+  "name": "Frost Glass",
+
+  "background": "#0C0F16",
+  "foreground": "#E8EFF5",
+
+  "cursorColor": "#7CC4FF",
+  "selectionBackground": "#34465E",
+
+  "black":         "#1A1F29",
+  "red":           "#FF8FA6",
+  "green":         "#5FE39A",
+  "yellow":        "#FFD36B",
+  "blue":          "#66B4FF",
+  "purple":        "#B49BFF",
+  "cyan":          "#5FE6DF",
+  "white":         "#C9D4DE",
+
+  "brightBlack":   "#3A4351",
+  "brightRed":     "#FFA7BA",
+  "brightGreen":   "#7FF0B4",
+  "brightYellow":  "#FFE39A",
+  "brightBlue":    "#8CCBFF",
+  "brightPurple":  "#CBB9FF",
+  "brightCyan":    "#86F0EB",
+  "brightWhite":   "#F2F7FB"
+}

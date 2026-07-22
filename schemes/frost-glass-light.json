@@ -1,0 +1,23 @@
+{
+  "name": "Frost Glass Light",
+  "background": "#EAEEF4",
+  "foreground": "#2A3446",
+  "cursorColor": "#2F6BE0",
+  "selectionBackground": "#C6D4EA",
+  "black":         "#2E3440",
+  "red":           "#C33B57",
+  "green":         "#1C8C5A",
+  "yellow":        "#9C6B15",
+  "blue":          "#2F6BE0",
+  "purple":        "#7A52D8",
+  "cyan":          "#0E8F9C",
+  "white":         "#586274",
+  "brightBlack":   "#7B879A",
+  "brightRed":     "#D6486C",
+  "brightGreen":   "#1EA76D",
+  "brightYellow":  "#B27E1B",
+  "brightBlue":    "#3D7CF2",
+  "brightPurple":  "#8C64EA",
+  "brightCyan":    "#159FAD",
+  "brightWhite":   "#1E2633"
+}

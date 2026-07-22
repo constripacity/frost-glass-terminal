@@ -1,0 +1,13 @@
+# Backups the installer creates before touching your files
+*.bak.*
+
+# OS / editor cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Local extraction / build artifacts
+extracted/
+*.zip

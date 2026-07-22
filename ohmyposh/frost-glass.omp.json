@@ -1,0 +1,130 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "console_title_template": "{{ .Folder }}",
+
+  "palette": {
+    "frost":    "#E8EFF5",
+    "deep":     "#10151F",
+    "slate":    "#1B2230",
+    "glass":    "#66B4FF",
+    "lavender": "#B49BFF",
+    "mint":     "#5FE39A",
+    "rose":     "#FF8FA6",
+    "amber":    "#FFD36B",
+    "aqua":     "#5FE6DF"
+  },
+
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:deep",
+          "foreground": "p:glass",
+          "template": " {{ if .WSL }}\ue712 {{ end }}{{ .Icon }} "
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:slate",
+          "foreground": "p:frost",
+          "options": {
+            "style": "agnoster_short",
+            "max_depth": 3,
+            "folder_icon": "\uf07b",
+            "home_icon": "\uf015",
+            "folder_separator_icon": " \ue0b1 "
+          },
+          "template": " \uf07b {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:mint",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:amber{{ end }}",
+            "{{ if gt .Ahead 0 }}p:glass{{ end }}",
+            "{{ if gt .Behind 0 }}p:lavender{{ end }}"
+          ],
+          "foreground": "p:deep",
+          "options": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "branch_max_length": 24
+          },
+          "template": " {{ .HEAD }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:aqua",
+          "options": {
+            "threshold": 500,
+            "style": "round"
+          },
+          "template": "\uf252 {{ .FormattedMs }}"
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:deep",
+          "foreground": "p:lavender",
+          "options": {
+            "time_format": "15:04"
+          },
+          "template": " \uf017 {{ .CurrentDate | date .Format }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:mint",
+          "foreground_templates": [
+            "{{ if .Error }}p:rose{{ end }}"
+          ],
+          "options": {
+            "always_enabled": true
+          },
+          "template": "\u276f "
+        }
+      ]
+    }
+  ],
+
+  "transient_prompt": {
+    "foreground": "p:glass",
+    "background": "transparent",
+    "template": "\u276f "
+  },
+
+  "secondary_prompt": {
+    "foreground": "p:lavender",
+    "background": "transparent",
+    "template": "\u276f\u276f "
+  }
+}
