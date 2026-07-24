@@ -4,6 +4,9 @@
 
 # Frost Glass: a frosted look for Windows Terminal
 
+<img width="1629" height="885" alt="Frost Glass TMRN" src="https://github.com/user-attachments/assets/b97178fd-2f41-4a43-b733-803af2aafe16" />
+
+
 > Frosted, translucent glass for cmd / PowerShell / WSL. Acrylic blur, a cool luminous palette, and a rounded-capsule Oh My Posh prompt. One installer, fully reversible.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-8CCBFF.svg)](LICENSE)
